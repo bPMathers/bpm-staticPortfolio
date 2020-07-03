@@ -1,5 +1,6 @@
 {
   "name": "bpm-static-portfolio",
+  "homepage": "http://bPMathers.github.io/bpm-staticPortfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
