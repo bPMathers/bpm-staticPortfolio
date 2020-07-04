@@ -1,25 +1,27 @@
 {
   "files": {
     "main.css": "/bpm-staticPortfolio/static/css/main.fb50924e.chunk.css",
-    "main.js": "/bpm-staticPortfolio/static/js/main.906cf12e.chunk.js",
-    "main.js.map": "/bpm-staticPortfolio/static/js/main.906cf12e.chunk.js.map",
+    "main.js": "/bpm-staticPortfolio/static/js/main.1656812a.chunk.js",
+    "main.js.map": "/bpm-staticPortfolio/static/js/main.1656812a.chunk.js.map",
     "runtime-main.js": "/bpm-staticPortfolio/static/js/runtime-main.eea7fe23.js",
     "runtime-main.js.map": "/bpm-staticPortfolio/static/js/runtime-main.eea7fe23.js.map",
-    "static/js/2.2e5817ff.chunk.js": "/bpm-staticPortfolio/static/js/2.2e5817ff.chunk.js",
-    "static/js/2.2e5817ff.chunk.js.map": "/bpm-staticPortfolio/static/js/2.2e5817ff.chunk.js.map",
+    "static/js/2.6a2ef452.chunk.js": "/bpm-staticPortfolio/static/js/2.6a2ef452.chunk.js",
+    "static/js/2.6a2ef452.chunk.js.map": "/bpm-staticPortfolio/static/js/2.6a2ef452.chunk.js.map",
     "index.html": "/bpm-staticPortfolio/index.html",
-    "precache-manifest.f92c6e16b31809d6143b5904009265f7.js": "/bpm-staticPortfolio/precache-manifest.f92c6e16b31809d6143b5904009265f7.js",
+    "precache-manifest.eac6005c547523bf566fbf9b8a046a57.js": "/bpm-staticPortfolio/precache-manifest.eac6005c547523bf566fbf9b8a046a57.js",
     "service-worker.js": "/bpm-staticPortfolio/service-worker.js",
     "static/css/main.fb50924e.chunk.css.map": "/bpm-staticPortfolio/static/css/main.fb50924e.chunk.css.map",
-    "static/js/2.2e5817ff.chunk.js.LICENSE.txt": "/bpm-staticPortfolio/static/js/2.2e5817ff.chunk.js.LICENSE.txt",
+    "static/js/2.6a2ef452.chunk.js.LICENSE.txt": "/bpm-staticPortfolio/static/js/2.6a2ef452.chunk.js.LICENSE.txt",
+    "static/media/22203-japan-scene-300x300.gif": "/bpm-staticPortfolio/static/media/22203-japan-scene-300x300.ffda6908.gif",
     "static/media/Clean.jpg": "/bpm-staticPortfolio/static/media/Clean.4105eeda.jpg",
     "static/media/Funny.jpg": "/bpm-staticPortfolio/static/media/Funny.0efafab4.jpg",
-    "static/media/Surprised.jpg": "/bpm-staticPortfolio/static/media/Surprised.1d32cb97.jpg"
+    "static/media/Surprised.jpg": "/bpm-staticPortfolio/static/media/Surprised.1d32cb97.jpg",
+    "static/media/expo.png": "/bpm-staticPortfolio/static/media/expo.d6e55f73.png"
   },
   "entrypoints": [
     "static/js/runtime-main.eea7fe23.js",
-    "static/js/2.2e5817ff.chunk.js",
+    "static/js/2.6a2ef452.chunk.js",
     "static/css/main.fb50924e.chunk.css",
-    "static/js/main.906cf12e.chunk.js"
+    "static/js/main.1656812a.chunk.js"
   ]
 }
