@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
+import { Button, Grid, } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 
+// import theme from './Theme'
 import CleanFace from '../../assets/Clean.jpg'
 import FunnyFace from '../../assets/Funny.jpg'
 import SurprisedFace from '../../assets/Surprised.jpg'
 
 const useStyles = makeStyles(theme => ({
-  faceContainer: {
-    // flexDirection: "column"
-    width: 100,
+  imgContainer: {
   },
   faceImg: {
     borderRadius: '50%',
     width: 200,
-    marginBottom: 5
+    marginBottom: 15,
+    // border: `10px solid ${theme.palette.common.bpmWhite}`,
+    boxShadow: '0px 3px 8px 0 #888888'
 
   }
 
@@ -28,16 +29,18 @@ const Face = () => {
 
   return (
     <>
-      <div className={classes.faceContainer}>
-        <Box display="flex" flexDirection="column" boxShadow={3} padding={3}>
-          <img className={classes.faceImg} alt="Benjamin 1" src={faceImg} />
-          <Box>
+      <Box boxShadow={2} padding={3} margin={0} width={200} borderRadius={20} css={{ backgroundColor: 'white' }}>
+        <Grid container direction="column" >
+          <Grid item className={classes.imgContainer} justify="center" alignItems="center" alignContent="center">
+            <img className={classes.faceImg} alt="Benjamin 1" src={faceImg} />
+          </Grid>
+          <Grid container item>
             <Button onClick={() => setFaceImg(CleanFace)}>Clean</Button>
             <Button onClick={() => setFaceImg(FunnyFace)}>Fizz</Button>
             <Button onClick={() => setFaceImg(SurprisedFace)}>Help!</Button>
-          </Box>
-        </Box>
-      </div>
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
 }

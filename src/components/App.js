@@ -8,7 +8,7 @@ import Face from '../components/ui/Face'
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ margin: 20 }}>
+      <div style={{ padding: 20, backgroundColor: theme.palette.common.bpmWhite, minHeight: 1000 }}>
         <Header />
         <Face />
       </div>
