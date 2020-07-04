@@ -17,8 +17,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 15,
     // border: `10px solid ${theme.palette.common.bpmWhite}`,
     boxShadow: '0px 3px 8px 0 #888888'
+  },
 
-  }
 
 }));
 
@@ -29,15 +29,15 @@ const Face = () => {
 
   return (
     <>
-      <Box boxShadow={2} padding={3} margin={0} width={200} borderRadius={20} css={{ backgroundColor: 'white' }}>
+      <Box boxShadow={2} padding={3} margin={3} width={200} borderRadius={5} css={{ backgroundColor: 'white' }}>
         <Grid container direction="column" >
-          <Grid item className={classes.imgContainer} justify="center" alignItems="center" alignContent="center">
+          <Grid container item className={classes.imgContainer}>
             <img className={classes.faceImg} alt="Benjamin 1" src={faceImg} />
           </Grid>
           <Grid container item>
-            <Button onClick={() => setFaceImg(CleanFace)}>Clean</Button>
-            <Button onClick={() => setFaceImg(FunnyFace)}>Fizz</Button>
-            <Button onClick={() => setFaceImg(SurprisedFace)}>Help!</Button>
+            <Button onClick={() => setFaceImg(CleanFace)} color="primary">Clean</Button>
+            <Button onClick={() => setFaceImg(FunnyFace)} color="primary">Fizz</Button>
+            <Button onClick={() => setFaceImg(SurprisedFace)} color="primary">Help!</Button>
           </Grid>
         </Grid>
       </Box>
