@@ -14,7 +14,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div style={{ padding: 20, backgroundColor: theme.palette.common.bpmWhite, minHeight: 1000 }}>
+      <div style={{ padding: 20, backgroundColor: theme.palette.common.bpmWhite, minHeight: 1800 }}>
         <Header />
         <Grid container>
           <Face />
