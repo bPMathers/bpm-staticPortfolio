@@ -1,12 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { List, Card, Link, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid } from '@material-ui/core';
+import { List, ListItem, ListSubheader, ListItemIcon, ListItemText, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid, Menu, MenuItem } from '@material-ui/core';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import expo from '../../assets/expo.png'
+import expo from '../../assets/expo2.png'
 import japan from '../../assets/22203-japan-scene-300x300.gif'
-import { react, nodeJs, graphql, postgreSQL, apollo, github, heroku, docker } from '../../assets/icons/devIconsSVGs'
+import { react, nodeJs, graphql, postgreSQL, apollo, github, heroku, docker, kanban } from '../../assets/icons/devIconsSVGs'
 import DevIcon from '../ui/DevIcon'
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +40,10 @@ const useStyles = makeStyles((theme) => ({
       opacity: 1,
       cursor: 'pointer'
     },
-  }
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
+  },
 }));
 
 const JapanAnim = () => {
@@ -52,10 +57,25 @@ const JapanAnim = () => {
 export default function ProjectCard() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const [anchorEl, setMenuAnchorEl] = React.useState(null);
 
+  const handleClick = (event) => {
+    // setAnchorEl(event.currentTarget);
+    setOpen(!open);
+  };
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const handleMenuClose = () => {
+    setMenuAnchorEl(null);
+  };
+
+  const handleMenuClick = (event) => {
+    setMenuAnchorEl(event.currentTarget);
+  };
+
 
 
   return (
@@ -69,18 +89,50 @@ export default function ProjectCard() {
           }
           action={
             <Grid container justify="center" alignItems="center">
-              <Link rel="noopener noreferrer" href="https://expo.io/@bpmbpmbpm/tourtour-rn" target="_blank"
-              >
-                <div className={classes.actionButton} >
-                  <img alt="expo logo" src={expo} style={{ width: 35, height: 35 }} />
-                </div>
-              </Link>
-              <Link rel="noopener noreferrer" href="https://github.com/bPMathers/tourtour-graphqlAPI" target="_blank"
-              >
-                <div className={classes.actionButton} >
-                  <DevIcon width={35}>{github}</DevIcon>
-                </div>
-              </Link>
+              <div>
+                <Grid container justify="center" alignItems="center" >
+                  <Grid item component="a" href="https://expo.io/@bpmbpmbpm/tourtour-rn" target="_blank" className={classes.actionButton}>
+                    <img alt="expo logo" src={expo} style={{ width: 38, height: 35 }} />
+                  </Grid>
+                  <Grid item className={classes.actionButton} onClick={handleMenuClick}>
+                    <DevIcon width={35}>{github}</DevIcon>
+                  </Grid>
+                </Grid>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  disableGutters
+                  style={{ marginLeft: 40 }}
+                >
+                  <MenuItem onClick={handleMenuClose} component="a" href="https://github.com/bPMathers/tourtour-rn" target="_blank">
+                    <ListItemIcon>
+                      <div>
+                        <DevIcon width={23}>{react}</DevIcon>
+                      </div>
+                    </ListItemIcon>
+                    <Typography variant="body1" color="textSecondary">Client Repo</Typography>
+                  </MenuItem>
+                  <MenuItem onClick={handleMenuClose} component="a" href="https://github.com/bPMathers/tourtour-graphqlAPI" target="_blank">
+                    <ListItemIcon>
+                      <div>
+                        <DevIcon width={23}>{nodeJs}</DevIcon>
+                      </div>
+                    </ListItemIcon>
+                    <Typography variant="body1" color="textSecondary">Backend Repo</Typography>
+                  </MenuItem>
+                  <MenuItem component="a" href="https://github.com/users/bPMathers/projects/2" onClick={handleMenuClose} target="_blank">
+                    <ListItemIcon>
+                      <div>
+                        <DevIcon width={20}>{kanban}</DevIcon>
+                      </div>
+                    </ListItemIcon>
+                    <Typography variant="body1" color="textSecondary">Kanban Board</Typography>
+                  </MenuItem>
+                </Menu>
+              </div>
             </Grid>
           }
           title="TourCues"
@@ -127,22 +179,65 @@ export default function ProjectCard() {
               &nbsp;&nbsp;&nbsp;&nbsp;As of now, the app makes use of the Google Geolocation and Places APIs, animations, encrypted authorization and image upload & hosting with cloudinary. Many more features, such as DMs between users and comments on places & reviews are on the way.
           </Typography>
             <Typography paragraph variant="body2" color="textSecondary" >
-              &nbsp;&nbsp;&nbsp;&nbsp;You can peek at the kanban board & source code by following the Github icon link and load the app on your mobile device with Expo by scanning the QR code on the Expo project page also linked at the top and below
+              &nbsp;&nbsp;&nbsp;&nbsp;To try the client app: load it on your mobile device with Expo by scanning the QR code on the linked Expo project page. Source code & kanban board are also linked below.
           </Typography>
-            <Grid container justify="center" alignItems="center">
-              <Link rel="noopener noreferrer" href="https://expo.io/@bpmbpmbpm/tourtour-rn" target="_blank"
-              >
-                <div className={classes.actionButton} >
-                  <img alt="expo logo" src={expo} style={{ width: 35, height: 35 }} />
-                </div>
-              </Link>
-              <Link rel="noopener noreferrer" href="https://github.com/users/bPMathers/projects/2" target="_blank"
-              >
-                <div className={classes.actionButton} >
-                  <DevIcon width={35}>{github}</DevIcon>
-                </div>
-              </Link>
-            </Grid>
+            <List
+              component="nav"
+              aria-labelledby="nested-list-subheader"
+              subheader={
+                <ListSubheader component="div" id="nested-list-subheader">
+                  _______
+        </ListSubheader>
+              }
+              className={classes.root}
+            >
+              <ListItem button component="a" href="https://expo.io/@bpmbpmbpm/tourtour-rn" target="_blank">
+                <ListItemIcon>
+                  <div>
+                    <img alt="expo logo" src={expo} style={{ width: 38, height: 35 }} />
+                  </div>
+                </ListItemIcon>
+                <ListItemText primary="Expo Project Page" />
+              </ListItem>
+              <ListItem button onClick={handleClick}>
+                <ListItemIcon>
+                  {/* <InboxIcon /> */}
+                  <div>
+                    <DevIcon width={30}>{github}</DevIcon>
+                  </div>
+                </ListItemIcon>
+                <ListItemText primary="Source Code" />
+                {open ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItem button component="a" href="https://github.com/bPMathers/tourtour-rn" target="_blank" className={classes.nested}>
+                    <ListItemIcon>
+                      <div>
+                        <DevIcon width={30}>{react}</DevIcon>
+                      </div>
+                    </ListItemIcon>
+                    <ListItemText primary="Client repo" />
+                  </ListItem>
+                  <ListItem button component="a" href="https://github.com/bPMathers/tourtour-graphqlAPI" target="_blank" className={classes.nested}>
+                    <ListItemIcon>
+                      <div>
+                        <DevIcon width={30}>{nodeJs}</DevIcon>
+                      </div>
+                    </ListItemIcon>
+                    <ListItemText primary="Backend repo" />
+                  </ListItem>
+                  <ListItem button component="a" href="https://github.com/users/bPMathers/projects/2" target="_blank" className={classes.nested}>
+                    <ListItemIcon>
+                      <div>
+                        <DevIcon width={30}>{kanban}</DevIcon>
+                      </div>
+                    </ListItemIcon>
+                    <ListItemText primary="Kanban Board" />
+                  </ListItem>
+                </List>
+              </Collapse>
+            </List>
           </CardContent>
         </Collapse>
       </Card>
