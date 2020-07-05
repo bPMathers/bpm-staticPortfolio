@@ -1,22 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
 import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import { List, Card, Link, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Grid from '@material-ui/core/Grid'
 
 import expo from '../../assets/expo.png'
 import japan from '../../assets/22203-japan-scene-300x300.gif'
-import { react, nodeJs, graphql, postgreSQL, apollo, github, prisma, heroku, docker } from '../../assets/icons/devIconsSVGs'
+import { react, nodeJs, graphql, postgreSQL, apollo, github, heroku, docker } from '../../assets/icons/devIconsSVGs'
 import DevIcon from '../ui/DevIcon'
 
 const useStyles = makeStyles((theme) => ({

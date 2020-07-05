@@ -5,9 +5,8 @@ import { Button, Grid, } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 
 // import theme from './Theme'
-import CleanFace from '../../assets/Clean.jpg'
-import FunnyFace from '../../assets/Funny.jpg'
-import SurprisedFace from '../../assets/Surprised.jpg'
+import CasualFace from '../../assets/Benj-Casual2d.jpg'
+import CleanFace from '../../assets/Benj-Clean1d.jpg'
 import { linkedin, github } from '../../assets/icons/devIconsSVGs'
 import DevIcon from '../ui/DevIcon'
 
@@ -15,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   imgContainer: {
   },
   faceImg: {
-    borderRadius: '50%',
+    borderRadius: 10,
     width: 200,
 
     marginBottom: 15,
@@ -36,20 +35,20 @@ const useStyles = makeStyles(theme => ({
 
 const Face = () => {
   const classes = useStyles()
-  const [faceImg, setFaceImg] = useState(CleanFace)
-  const preventDefault = (event) => event.preventDefault();
+  const [faceImg, setFaceImg] = useState(CasualFace)
+  // const preventDefault = (event) => event.preventDefault();
 
   return (
     <>
-      <Box boxShadow={2} padding={3} margin={3} width={200} height={290} borderRadius={5} css={{ backgroundColor: 'white' }}>
+      <Box boxShadow={2} padding={3} margin={3} width={200} height={390} borderRadius={5} css={{ backgroundColor: 'white' }}>
         <Grid container direction="column" >
           <Grid container item className={classes.imgContainer}>
             <img className={classes.faceImg} alt="Benjamin 1" src={faceImg} />
           </Grid>
-          <Grid container item>
+          <Grid container item justify="space-around">
+            <Button onClick={() => setFaceImg(CasualFace)} color="primary">Casual</Button>
             <Button onClick={() => setFaceImg(CleanFace)} color="primary">Clean</Button>
-            <Button onClick={() => setFaceImg(FunnyFace)} color="primary">Fizz</Button>
-            <Button onClick={() => setFaceImg(SurprisedFace)} color="primary">Help!</Button>
+            {/* <Button onClick={() => setFaceImg(FunnyFace)} color="primary">Fizzy</Button> */}
           </Grid>
         </Grid>
         <Grid container justify="center" alignItems="center">
