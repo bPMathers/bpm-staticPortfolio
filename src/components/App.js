@@ -16,7 +16,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div style={{ padding: 20, backgroundColor: theme.palette.common.bpmWhite, minHeight: 1800 }}>
         <Header />
-        <Grid container>
+        <Grid container justify="center">
           <Face />
           <TourCuesCard />
         </Grid>

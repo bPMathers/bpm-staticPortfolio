@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
   faceImg: {
     borderRadius: 10,
     width: 200,
+    height: 300,
 
     marginBottom: 15,
     // border: `10px solid ${theme.palette.common.bpmWhite}`,
