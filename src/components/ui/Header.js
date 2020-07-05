@@ -3,10 +3,10 @@ import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/ToolBar'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { useTheme } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   header: {
@@ -38,19 +38,23 @@ function ElevationScroll(props) {
 const Header = () => {
   const classes = useStyles()
   const theme = useTheme()
-  const matchesMd = useMediaQuery(theme.breakpoints.down("md"))
+  const matchesSm = useMediaQuery(theme.breakpoints.down("sm"))
+  const matchesXs = useMediaQuery(theme.breakpoints.down("xs"))
 
   return (
     <>
       <ElevationScroll>
         <AppBar position="fixed">
           <div className={classes.band}></div>
-          <ToolBar >
-            <Typography variant={matchesMd ? "body1" : "h5"} color="secondary" >
-              <Box letterSpacing={matchesMd ? 7 : 7}>
-                Benjamin Proulx-Mathers
+          <ToolBar>
+            <Grid container justify="center">
+
+              <Typography variant={matchesXs ? "body1" : matchesSm ? "h6" : "h5"} color="secondary">
+                <Box letterSpacing={7}  >
+                  Benjamin Proulx-Mathers
             </Box>
-            </Typography>
+              </Typography>
+            </Grid>
           </ToolBar>
 
         </AppBar>
