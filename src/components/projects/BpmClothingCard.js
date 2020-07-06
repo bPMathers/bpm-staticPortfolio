@@ -68,7 +68,7 @@ export default function BpmClothingCard() {
 
   return (
     <>
-      <Card className={classes.root} style={{ marginLeft: matchesSm ? 0 : 24, margiRight: matchesSm ? 0 : 24, marginBottom: 24, marginTop: 24 }}>
+      <Card className={classes.root} style={{ marginLeft: matchesSm ? 0 : 24, marginRight: matchesSm ? 0 : 24, marginBottom: 24, marginTop: 24 }}>
         <CardHeader
           avatar={
             <Avatar aria-label="project" className={classes.avatar}>
