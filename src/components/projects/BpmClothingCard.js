@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { List, ListItem, ListSubheader, ListItemIcon, ListItemText, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid } from '@material-ui/core';
+import { List, ListItem, ListSubheader, ListItemIcon, ListItemText, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid, useMediaQuery } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import styledComp2 from '../../assets/icons/styledComp.png'
@@ -56,6 +56,8 @@ const eCommImg = () => {
 }
 
 export default function BpmClothingCard() {
+  const theme = useTheme()
+  const matchesSm = useMediaQuery(theme.breakpoints.down("sm"))
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -66,7 +68,7 @@ export default function BpmClothingCard() {
 
   return (
     <>
-      <Card className={classes.root}>
+      <Card className={classes.root} style={{ marginLeft: matchesSm ? 0 : 24, margiRight: matchesSm ? 0 : 24, marginBottom: 24, marginTop: 24 }}>
         <CardHeader
           avatar={
             <Avatar aria-label="project" className={classes.avatar}>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
-import { List, ListItem, ListSubheader, ListItemIcon, ListItemText, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid, Menu, MenuItem } from '@material-ui/core';
+import { List, ListItem, ListSubheader, ListItemIcon, ListItemText, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, Grid, Menu, MenuItem, useMediaQuery } from '@material-ui/core';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -14,7 +14,7 @@ import DevIcon from '../ui/DevIcon'
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    margin: 24,
+
     height: "100%"
   },
 
@@ -58,6 +58,8 @@ const JapanAnim = () => {
 }
 
 export default function TourCuesCard() {
+  const theme = useTheme()
+  const matchesSm = useMediaQuery(theme.breakpoints.down("sm"))
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -83,7 +85,7 @@ export default function TourCuesCard() {
 
   return (
     <>
-      <Card className={classes.root}>
+      <Card className={classes.root} style={{ marginLeft: matchesSm ? 0 : 24, margiRight: matchesSm ? 0 : 24, marginBottom: 24, marginTop: 24 }}>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
@@ -107,7 +109,7 @@ export default function TourCuesCard() {
                   keepMounted
                   open={Boolean(anchorEl)}
                   onClose={handleMenuClose}
-                  disableGutters
+                  // disablegutters
                   style={{ marginLeft: 40 }}
                 >
                   <MenuItem onClick={handleMenuClose} component="a" href="https://github.com/bPMathers/tourtour-rn" target="_blank">
