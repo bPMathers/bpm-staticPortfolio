@@ -14,6 +14,8 @@ import DevIcon from '../ui/DevIcon'
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    margin: 24,
+    height: "100%"
   },
 
   media: {
@@ -49,12 +51,12 @@ const useStyles = makeStyles((theme) => ({
 const JapanAnim = () => {
   return (
     <Grid container justify="center" alignItems="center" >
-      <img alt="project gif" src={japan} />
+      <img alt="Tour cues project" src={japan} />
     </Grid>
   )
 }
 
-export default function ProjectCard() {
+export default function TourCuesCard() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -154,7 +156,7 @@ export default function ProjectCard() {
         </Grid>
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            <span style={{ fontWeight: 'bold' }}>&nbsp;&nbsp;&nbsp;&nbsp;Personal project</span> - A native app for touring artists to share their best spots when touring. Cheap Motels, Late Night Snacks, Dive Bars, Secret Nature Spots, etc!
+            <span style={{ fontWeight: 'bold' }}>&nbsp;&nbsp;&nbsp;&nbsp;Personal project</span> - A mobile app for touring artists to share their best spots when on tour. Cheap Motels, Late Night Snacks, Dive Bars, Secret Nature Spots, etc!
         </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -176,7 +178,7 @@ export default function ProjectCard() {
               &nbsp;&nbsp;&nbsp;&nbsp;I created an Expo managed React Native app that uses Apollo Client in tandem with a Heroku-hosted NodeJS server and a dockerized Prisma ORM to circulate GraphQL data that is itself stored in a PostgreSQL DB also hosted on Heroku.
           </Typography>
             <Typography paragraph variant="body2" color="textSecondary">
-              &nbsp;&nbsp;&nbsp;&nbsp;As of now, the app makes use of the Google Geolocation and Places APIs, animations, encrypted authorization and image upload & hosting with cloudinary. Many more features, such as DMs between users and comments on places & reviews are on the way.
+              &nbsp;&nbsp;&nbsp;&nbsp;As of now, the app makes use of the Google Geolocation and Places APIs, animations, encrypted authorization and image upload & hosting with cloudinary. Many more features, such as DMs between users, comments on places & reviews, data collection from beta-testers and thorough unit and integration tests are on the way.
           </Typography>
             <Typography paragraph variant="body2" color="textSecondary" >
               &nbsp;&nbsp;&nbsp;&nbsp;To try the client app: load it on your mobile device with Expo by scanning the QR code on the linked Expo project page. Source code & kanban board are also linked below.
