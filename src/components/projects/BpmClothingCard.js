@@ -144,9 +144,9 @@ export default function BpmClothingCard() {
               }
               className={classes.root}
             >
-              <ListItem button component="a" href="https://expo.io/@bpmbpmbpm/tourtour-rn" target="_blank">
+              <ListItem button component="a" href="https://e-commerce-portfolio-app-live.herokuapp.com/" target="_blank">
                 <ListItemIcon>
-                  <Grid item className={classes.actionButton} component="a" href="https://e-commerce-portfolio-app-live.herokuapp.com/" target="_blank">
+                  <Grid item className={classes.actionButton} >
                     <DevIcon width={28}>{internet}</DevIcon>
                   </Grid>
                 </ListItemIcon>
